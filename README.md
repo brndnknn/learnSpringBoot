@@ -1,1 +1,1 @@
-This repo contains a project built based on the tutorial on full-stack development with React and Java Spring Boot.
+This repo contains a project built based on [this](https://www.infoworld.com/article/2520759/full-stack-development-with-react-and-spring-boot-part-1.html/amp/) tutorial on full-stack development with React and Java Spring Boot.
