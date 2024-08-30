@@ -43,11 +43,20 @@ function App() {
     .catch(error => console.error(error));
   }
 
+  const deleteTodo = (id) => {
+    const filteredTodos = todos.filter(todo => todo.id !== id);
+    setTodos(filteredTodos);
+    fetch(`http://localhost:8080/todos/${id}`, {
+        method: 'DELETE'
+    })
+    .catch(error => console.error(error));
+  };
+
   return (
     <div className='App'>
       <header className="App-header"><h1>My TODO App</h1></header>
         <input id='todo-input' type="text" placeholder="Add to TODO" />
-        <button onClick={(e) => addTodo(document.getElementById('todo-input').value)}>Add TODO</button>
+        <button onClick={() => addTodo(document.getElementById('todo-input').value)}>Add TODO</button>
         <ul>
           {todos.map(todo => (
             <li key={todo.id}>
